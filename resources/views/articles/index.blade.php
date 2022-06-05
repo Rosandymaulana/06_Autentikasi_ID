@@ -1,6 +1,13 @@
 @extends('layouts.app') 
 
 @section('content') 
+
+<div class="row">
+    <div class="mb-4" style="margin: 0px 0px 0px 70px;">
+        <a class="btn btn-success" href="{{ route('cetak_pdf') }}">Cetak PDF</a>
+    </div>
+</div>
+
     @if ($message = Session::get('success')) 
         <div class="alert alert-success"> 
         <p>{{ $message }}</p> 
@@ -19,7 +26,8 @@
         <td>{{ $article->content }}</td> 
         <td><img width="150px" src="{{asset('storage/'.$article->featured_image)}}"></td> 
     </tr> 
-
  @endforeach 
- </table> 
+    </table> 
+
+
 @endsection 
